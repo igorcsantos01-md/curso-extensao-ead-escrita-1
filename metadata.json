@@ -1,0 +1,6 @@
+{
+  "name": "Portal de Extensão EAD — Escrita Científica e Validador Público (Certificado Nº 01)",
+  "description": "Portal Institucional e Sistema Oficial de Verificação Pública de Autenticidade do Curso de Extensão EAD em Escrita Científica, Normas Editoriais (Vancouver/ABNT) e Publicação de Artigos Biomédicos — Editora Mente e Saúde & Centro Profissionalizante Maria Dalva de Araújo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

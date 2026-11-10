@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', Georgia, serif;
+    --font-serif: 'Libre Baskerville', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8FAFC;
+    color: #0F172A;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-display-cert {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.font-serif-cert {
+  font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+.font-sans-cert {
+  font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+}
+
+.font-mono-cert {
+  font-family: 'JetBrains Mono', Courier, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Certificate exact A4 Landscape dimensions (297mm x 210mm -> 1122.5px x 793.7px at 96dpi) */
+.cert-sheet {
+  width: 297mm;
+  height: 210mm;
+  min-width: 297mm;
+  min-height: 210mm;
+  max-width: 297mm;
+  max-height: 210mm;
+  background-color: #FFFFFF;
+  color: #111827;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* Print Rules for Surgical 2-Page A4 Landscape Export */
+@page {
+  size: A4 landscape;
+  margin: 0mm;
+}
+
+@media print {
+  html, body {
+    width: 297mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+    overflow: visible !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 297mm !important;
+  }
+
+  .cert-scale-wrapper {
+    transform: none !important;
+    width: 297mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .cert-sheet {
+    width: 297mm !important;
+    height: 210mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .cert-page-1 {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .cert-page-2 {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+}
